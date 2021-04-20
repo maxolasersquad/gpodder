@@ -28,7 +28,7 @@ services:
             - caddy
 
     db:
-        image: "postgres:10-alpine"
+        image: "postgres:13.2-alpine"
         restart: always
         volumes:
             - "db:/var/lib/postgresql/data"
@@ -41,7 +41,7 @@ services:
             - "5432"
 
     redis:
-        image: "redis:5-alpine"
+        image: "redis:6.2-alpine"
         restart: always
 
     beat:
