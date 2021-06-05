@@ -21,6 +21,7 @@ services:
             DEBUG: ${DEBUG}
         volumes:
             - "./static:/usr/src/mygpo/staticfiles"
+            - "./media:/usr/src/mygpo/media"
         ports:
             - "8000:8000"
         networks:
@@ -76,6 +77,8 @@ services:
             SECRET_KEY: ${SECRET_KEY}
             DATABASE_URL: postgres://mygpo:mygpo@db/mygpo
             LOGGING_CELERY_LEVEL: INFO
+        volumes:
+            - "./media:/usr/src/mygpo/media"
         entrypoint:
             - celery
             - -A
